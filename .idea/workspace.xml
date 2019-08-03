@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0e09929-e202-4133-9445-87fcd3a2a6a1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Cwiczenie1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Cwiczenie2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Cwiczenie3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Cwiczenie4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Cwiczenie5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Cwiczenie6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/KursNoSQL_cz1.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/PrezentacjaZapytan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_instruktora/Struktura DB" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/Cwiczenie1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/Cwiczenie2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/Cwiczenie3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/Cwiczenie4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/Cwiczenie5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/Cwiczenie6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Materiały_rozwiązania/PrezentacjaZapytan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_20190727_absent.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f0e09929-e202-4133-9445-87fcd3a2a6a1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,10 +102,25 @@
       <option name="presentableId" value="Default" />
       <updated>1564816338258</updated>
     </task>
+    <task id="LOCAL-00001" summary="absent">
+      <created>1564817646345</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564817646345</updated>
+    </task>
+    <task id="LOCAL-00002" summary="absent">
+      <created>1564817865808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564817865808</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -156,6 +149,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="absent" />
+    <option name="LAST_COMMIT_MESSAGE" value="absent" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Materiały_instruktora/Struktura DB">
