@@ -1,0 +1,170 @@
+Michal Szymanski [11:54 AM]
+uzytkownik
+id
+imie
+nazwisko
+login
+id_abonament
+
+film
+id
+tytul
+opis
+data_dodania
+link_do_filmu
+
+artyscie
+id
+imie
+nazwisko
+rok_urodzenia
+biogram
+
+typ_obsady
+ typ
+
+obsada
+id_filmu
+id_osady
+typ
+
+kategoria
+ id
+ typ
+ opis
+
+film_kategoria
+ id_film
+ id_kategoria
+
+rodzaj_operacji
+rodzaj
+opis
+
+stan_konta
+id_uzytkownika
+stan
+
+operacje_finansowe
+ id
+ id_uzytkownika
+ rodzaj  (FK/WP)
+ kwota
+
+status_zaproszenia
+ status
+
+znajomi
+ id_zapraszajacy
+ id_zaproszonego
+ status  ( oczekujacy, potwierdzony, odrzucony)
+
+historia_pobranych
+ id_uzytkownika
+ id_filmu
+ kiedy
+
+Tomasz Sidor [1:06 PM]
+DROP TABLE IF EXISTS znajomi;
+DROP TABLE IF EXISTS status_zaproszenia;
+DROP TABLE IF EXISTS operacje_finansowe;
+DROP TABLE IF EXISTS stan_konta;
+DROP TABLE IF EXISTS rodzaj_operacji;
+DROP TABLE IF EXISTS film_kategoria;
+DROP TABLE IF EXISTS kategoria;
+DROP TABLE IF EXISTS obsada;
+DROP TABLE IF EXISTS typ_obsady;
+DROP TABLE IF EXISTS artysta;
+DROP TABLE IF EXISTS film;
+DROP TABLE IF EXISTS uzytkownik;
+DROP TABLE IF EXISTS abonament;
+
+
+
+CREATE TABLE  abonament (
+    id_abonament           BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    ilosc_filmow          BIGINT NOT NULL,
+    cena                NUMERIC(8,2) NOT NULL
+   );
+
+CREATE TABLE  uzytkownik (
+    id_uzytkownik                BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    imie                CHAR(200) NOT NULL,
+    nazwisko            CHAR(200) NOT NULL,
+    login_email            CHAR(50)  NOT NULL,
+    data_zatrudnienia   DATETIME  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    id_abonament        BIGINT ,
+   FOREIGN KEY (id_abonament) REFERENCES abonament(id_abonament)
+   );
+
+CREATE TABLE  film (
+    id_film            BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    tytuł            CHAR(200) NOT NULL,
+    opis            CHAR(50)  NOT NULL,
+    data_dodania    DATETIME  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    link_do_filmu    CHAR(200) NOT NULL
+   );
+
+CREATE TABLE  artysta(
+    id_artysta        BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    imie            CHAR(200) NOT NULL,
+    nazwisko        CHAR(50)  NOT NULL,
+    biogram           CHAR(200) NOT NULL
+   );
+
+CREATE TABLE  typ_obsady(
+    id_obsady        BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    typ               CHAR(200) NOT NULL
+   );
+CREATE TABLE  obsada(
+    id_film               BIGINT,
+    id_artysta        BIGINT,
+    id_obsady        BIGINT,
+    opis    CHAR(200) NOT NULL,
+   PRIMARY KEY (id_film, id_artysta, id_obsady, opis)
+   );
+CREATE TABLE  kategoria(
+    id_kategoria    BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    typ                CHAR(200) NOT NULL,
+    opis            CHAR(50)  NOT NULL
+   );
+CREATE TABLE  film_kategoria(
+    id_film            BIGINT,
+    id_kategoria    BIGINT,
+    PRIMARY KEY (id_film, id_kategoria),
+    FOREIGN KEY (id_film) REFERENCES film(id_film),
+    FOREIGN KEY (id_kategoria) REFERENCES kategoria(id_kategoria)
+   );
+CREATE TABLE  rodzaj_operacji(
+    id_rodzaj_operacji    BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    opis                CHAR(200) NOT NULL
+   );
+CREATE TABLE  stan_konta(
+    id_uzytkownik    BIGINT PRIMARY KEY,
+    stan_konta        NUMERIC(8,2) NOT NULL,
+    FOREIGN KEY (id_uzytkownik) REFERENCES uzytkownik(id_uzytkownik)
+   );
+CREATE TABLE  operacje_finansowe(
+    id_operacji            BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+   id_uzytkownik        BIGINT,
+    id_rodzaj_operacji    BIGINT,
+   kwota                 NUMERIC(8,2) NOT NULL,
+    FOREIGN KEY (id_uzytkownik) REFERENCES uzytkownik(id_uzytkownik),
+    FOREIGN KEY (id_rodzaj_operacji) REFERENCES rodzaj_operacji(id_rodzaj_operacji)
+   );
+CREATE TABLE  status_zaproszenia(
+    status_zaproszenia    CHAR(200) NOT NULL PRIMARY KEY
+   );
+CREATE TABLE  znajomi(
+    id_uzytkownik1 BIGINT,
+    id_uzytkownik2 BIGINT,
+    status_zaproszenia    CHAR(200) NOT NULL PRIMARY KEY,
+   FOREIGN KEY (id_uzytkownik1) REFERENCES uzytkownik(id_uzytkownik),
+   FOREIGN KEY (id_uzytkownik2) REFERENCES uzytkownik(id_uzytkownik),
+   FOREIGN KEY (status_zaproszenia) REFERENCES status_zaproszenia(status_zaproszenia)
+   );
+CREATE TABLE  historia_pobranych(
+    id_uzytkownik    BIGINT,
+   id_film            BIGINT,
+   data_pobrania   DATETIME  NOT NULL DEFAULT CURRENT_TIMESTAMP,
+   );
